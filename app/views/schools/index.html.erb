@@ -5,12 +5,16 @@
   <% end %>
   <h1>List of Schools</h1>
 
+  <div>
+    <%= form_tag '/schools', :method => 'get' do %>
+      <%= label_tag :city %>
+      <%= text_field_tag :city, params[:city] %>
 
-  <p>
-  <%= text_field_tag :search, params[:search] %>
-  <%= submit_tag "Search" %>
-  </p>
-
+      <%= label_tag :state %>
+      <%= text_field_tag :state, params[:state] %>
+      <%= submit_tag "Search" %>
+    <% end %>
+  </div>
 </div>
 
 <div class="table-responsive">

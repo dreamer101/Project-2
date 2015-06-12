@@ -4,7 +4,25 @@ class SchoolsController < ApplicationController
   # GET /schools
   # GET /schools.json
   def index
-    @schools = School.all
+    # @schools = School.all
+
+    search_hash = {}
+
+    puts "params: #{params}"
+    if params[:city] && params[:city].empty? == false
+      search_hash[:city] = params[:city]
+    end
+    if params[:state] && params[:state].empty? == false
+      search_hash[:state] = params[:state]
+    end
+
+    if search_hash.empty?
+      @schools = []
+    else
+      @schools = School.where(search_hash)
+    end
+
+    puts "search schools: #{@schools}"
   end
 
   # GET /schools/1
