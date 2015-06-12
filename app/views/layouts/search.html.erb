@@ -1,0 +1,8 @@
+<h1>Schools</h1>
+
+<% form_tag school_data_file, :method => 'get' do %>
+<p>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search" %>
+</p>
+<% end %>

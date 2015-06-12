@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+  resources :schools
   devise_for :users
   root to: 'static_pages#home'
   match '/about', to: 'static_pages#about', via: 'get'
-
+  get 'search/:action' => 'searches#:action'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+schools_data_file = "#{Rails.root}/data/schools.json"
+schools = JSON.parse(File.read(schools_data_file))
+schools.each do |school|
+  School.create!(school.slice(:name, :website, :contact_name))
+end
