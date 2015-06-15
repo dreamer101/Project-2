@@ -15,6 +15,9 @@ class SchoolsController < ApplicationController
     if params[:state] && params[:state].empty? == false
       search_hash[:state] = params[:state]
     end
+    if params[:description] && params[:description].empty? == false
+      search_hash[:description] = params[:description]
+    end
 
     if search_hash.empty?
       @schools = []

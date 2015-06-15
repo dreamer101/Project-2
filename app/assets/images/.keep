@@ -1,0 +1,4 @@
+.bgimage {
+background-image: url(http://rgvisionmagazine.com/wp-content/uploads/2013/07/Harlingen-21st-century-72.jpg);
+background-size: 100%;
+}
